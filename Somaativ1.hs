@@ -1,0 +1,1 @@
+soma n = sum [1 .. n]
