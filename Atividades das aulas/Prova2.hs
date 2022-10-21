@@ -30,9 +30,18 @@ terceiro'' xs
 escolher3 (x:y:z:xs) = z
 
 -- QUESTÃO 3
---A)
+-- A)
+novoTail1 l = if l == [] then [] else tail l
 
+-- B)
+novoTail2 l
+    | null l = []
+    | otherwise = tail l
 
+-- C)
+
+novoTail3 [] =[]
+novoTail3 (x:xs) = xs
 
 -- QUESITO 4
 
@@ -54,10 +63,5 @@ primos n = [x | x <- [2 .. n], primo x]
 
 -- QUESITO 6
 
-shiftLeft :: Int -> [a] -> [a]
-shiftLeft z (x:xs) = if z == 0 then x:xs else shiftLeft (z - 1) (xs ++ [x])
---     |z == 0 = x:xs
---     |otherwise = shiftLeft (z - 1) (xs ++ [x])
-
--- shiftLeft 0 xs = xs
--- shiftLeft z (x:xs) = shiftLeft (z - 1) (xs ++ [x])
+rotateLeft :: Int -> [a] -> [a]
+rotateLeft z (x:xs) = if z == 0 then x:xs else rotateLeft (z - 1) (xs ++ [x])
